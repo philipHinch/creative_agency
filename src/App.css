@@ -6,6 +6,10 @@
   --montserrat-alt:'Montserrat Alternates', sans-serif;
   --open-sans:'Open Sans', sans-serif;
 }
+/* max width variable */
+:root{
+  --max-width: 1220px;
+}
 
 *,*::after,*::before{
   margin: 0;
@@ -16,6 +20,7 @@ body{
   position: relative;
   font-family: var(--montserrat-alt);
   background-color: #f6f6f6;
+  color: midnightblue;
   font-size: 1.1rem;
 }
 h1,h2,h3,h4,h5,h6{
@@ -24,7 +29,7 @@ h1,h2,h3,h4,h5,h6{
 }
 a{
   text-decoration: none;
-  color: black;
+  color: midnightblue;
 }
 ul{
   list-style: none;
@@ -32,16 +37,16 @@ ul{
 /* header */
 header{
   position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
   color: white;
   width: 100%;
+  max-width: var(--max-width);
   padding: 20px;
-  z-index: 1;
+  margin: auto;
+  z-index: 2;
 }
 .navbar{
   display: flex;
@@ -56,7 +61,7 @@ header{
 }
 .activeLink{
   background-color: white;
-  color: black;
+  color: midnightblue;
 }
 .navbar li:hover{
   background-color: white;
@@ -64,18 +69,90 @@ header{
 }
 /* main */
 .mainContainer{
-  max-width: 1920px;
+  max-width: var(--max-width);
+  margin: auto;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
 }
 .box1{
   position: relative;
-  height: 500px;
+  height: 450px;
   background-color: steelblue;
   overflow: hidden;
-  border: 1px solid black;
- 
+
 }
 .box1 img{
   width: 100%;
-  transform: translateY(-500px);
+  transform: translateY(-380px);
   position: absolute;
+  
+}
+.otherBoxes{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 100%;
+  max-width: var(--max-width);
+}
+.boxSecondary{
+  width: 100%;
+  aspect-ratio: 1/1;
+ overflow: hidden;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.boxSecondary img{
+  width: 100%;
+}
+.box3{
+  background-image: url('./assets/images/banana_yellow.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.box4{
+  background-image: url('./assets/images/cup_pink.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom 0% right 0%;
+}
+.box6{
+  background-image: url('./assets/images/papaya_green.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.box7{
+  background-image: url('./assets/images/avocado_pink.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.textBox{
+  flex-direction: column;
+  padding: 80px;
+}
+.textBox h2{
+  font-size: 2rem;
+}
+.textBox p{
+  margin: 20px 0;
+}
+.boxLink{
+  font-family: var(--abril);
+  text-transform: uppercase;
+  border-bottom: 8px solid gold;
+  line-height: 6px;
+  padding: 0 5px;
+}
+/* media queries */
+@media(max-width:1280px){
+  .box1 img{
+    transform: translateY(-300px);
+  }
+}
+@media(max-width:850px){
+  .box1 img{
+    transform: translateY(-100px);
+  }
 }
