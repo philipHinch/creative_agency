@@ -8,7 +8,7 @@
 }
 /* max width variable */
 :root{
-  --max-width: 1220px;
+  --max-width: 1280px;
 }
 
 *,*::after,*::before{
@@ -20,6 +20,7 @@ body{
   position: relative;
   font-family: var(--montserrat-alt);
   background-color: #f6f6f6;
+  background-color: rgb(247, 247, 255);
   color: midnightblue;
   font-size: 1.1rem;
 }
@@ -99,10 +100,12 @@ header{
  display: flex;
  align-items: center;
  justify-content: center;
+ 
 }
 .boxSecondary img{
   width: 100%;
 }
+
 .box3{
   background-image: url('./assets/images/banana_yellow.jpg');
   background-position: center;
@@ -131,19 +134,74 @@ header{
 .textBox{
   flex-direction: column;
   padding: 80px;
+  background-color: white;
 }
 .textBox h2{
   font-size: 2rem;
 }
 .textBox p{
-  margin: 20px 0;
+  margin: 40px 0;
 }
 .boxLink{
+  position: relative;
   font-family: var(--abril);
   text-transform: uppercase;
-  border-bottom: 8px solid gold;
-  line-height: 6px;
   padding: 0 5px;
+  line-height: 4px;
+  border-bottom: 8px solid gold;
+  transition: all 0.2s ease-in-out;
+  z-index: 6;
+}
+.boxLink:hover{
+  border-color: coral;
+}
+/* testimonial */
+.testimonialsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 50px;
+}
+.testimonialsHeader{
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.2rem;
+  margin: 50px 0;
+}
+.testimonials{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonial{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.testimonialAvatarContainer{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.testimonialAvatarContainer img{
+  width: 100%;
+}
+.testimonialText{
+  font-size: 0.9rem;
+  margin: 30px 0;
+  text-align: center;
+}
+.testimonialName{
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.testimonialJobTitle{
+  font-size: 0.8rem;
+  color: #aaa;
 }
 /* media queries */
 @media(max-width:1280px){
