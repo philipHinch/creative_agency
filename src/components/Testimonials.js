@@ -5,9 +5,6 @@ import Testimonial from './Testimonial';
 
 
 const Testimonials = () => {
-
-    console.log(data);
-
     return (
         <div className="testimonialsContainer">
             <h2 className="testimonialsHeader">

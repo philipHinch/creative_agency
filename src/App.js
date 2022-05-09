@@ -9,6 +9,7 @@ import cupPink from './assets/images/cup_pink.jpg'
 import papayaGreen from './assets/images/papaya_green.jpg'
 import avocadoPink from './assets/images/avocado_pink.jpg'
 import Testimonials from './components/Testimonials';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           </div>
         </div>
         <Testimonials />
+        <Footer />
       </section>
     </div>
   );
