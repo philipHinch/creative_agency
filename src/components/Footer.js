@@ -43,6 +43,7 @@ const Footer = () => {
                     <li className="footerSocialLink"><Icon className='socialIcon' icon="fa6-brands:pinterest-square" />
                     </li>
                 </ul>
+                <small className='copyright'>&copy; 2022 -<a href="https://github.com/philipHinch" target='_blank'>https://github.com/philipHinch</a></small>
             </div>
         </footer>
     );

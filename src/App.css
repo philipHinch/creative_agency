@@ -356,6 +356,15 @@ header{
 .socialIcon:hover{
   opacity: 0.7;
 }
+.copyright{
+  position: absolute;
+  bottom: 5px;
+  color: #303030;
+}
+.copyright a{
+  color: #303030;
+  margin-left: 5px;
+}
 /* media queries */
 @media(max-width:1280px){
   .box1 img{
