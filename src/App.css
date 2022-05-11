@@ -398,6 +398,21 @@ header{
     padding: 100px 0px;
   }
 }
+@media(max-width:450px){
+  .textBox{
+    padding: 40px;
+  }
+  .textBox h2{
+    font-size: 1.5em;
+  }
+  .textBox p{
+    font-size: 1rem;
+  }
+  .box6::before,.box6::after,.box7::before,.box7::after{
+    width: 95%;
+    text-align: center;
+  } 
+}
 @keyframes slideIn {
   0%{
     transform: translateX(5000px);
