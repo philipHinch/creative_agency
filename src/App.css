@@ -35,6 +35,38 @@ a{
 ul{
   list-style: none;
 }
+/* slide menu */
+.slideMenu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 9999;
+  animation: slideIn 0.3s ease-in-out;
+}
+.slideMenuList{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40%;
+  margin-bottom: 100px;
+  font-size: 1.3rem;
+}
+.slideMenuList li{
+  cursor: pointer;
+}
+.closeIcon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 3.5rem;
+  cursor: pointer;
+}
 /* header */
 header{
   position: absolute;
@@ -70,9 +102,32 @@ header{
 }
 /* main */
 .mainContainer{
+  position: relative;
   max-width: var(--max-width);
   margin: auto;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+.overlay{
+  display: none;
+}
+.showOverlay{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 6;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.hamburgerIcon{
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 3rem;
+  display: none;
+  color: white;
+  cursor: pointer;
 }
 .box1{
   position: relative;
@@ -325,16 +380,29 @@ header{
     flex-direction: column;
   }
 }
-@media(max-width:500px){
-  .box1{
-
+@media(max-width:700px){
+  .hamburgerIcon{
+    display: block;
+    z-index: 5;
   }
+  .navbar{
+    display: none;
+  }
+}
+@media(max-width:500px){
   .box1 img{
     transform: translateX(-17%);
     width: 150%;
-
   }
   .testimonialsContainer{
     padding: 100px 0px;
+  }
+}
+@keyframes slideIn {
+  0%{
+    transform: translateX(5000px);
+  }
+  100%{
+    transform: translateX(0);
   }
 }

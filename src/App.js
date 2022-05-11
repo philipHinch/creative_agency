@@ -2,6 +2,7 @@
 import './App.css';
 //components
 import Header from './components/Header';
+import SlideMenu from './components/SlideMenu';
 //images
 import orangeMain from './assets/images/orange_blue_main.jpg'
 import bananaYellow from './assets/images/banana_yellow.jpg'
@@ -10,12 +11,40 @@ import papayaGreen from './assets/images/papaya_green.jpg'
 import avocadoPink from './assets/images/avocado_pink.jpg'
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
+//icons
+import { Icon } from '@iconify/react';
+import { useEffect, useState } from 'react';
 
 
 function App() {
+
+  const [showMenu, setShowMenu] = useState(false)
+
+  const handleClick = (e) => {
+    if (e.target.tagName === 'path' || e.target.tagName === 'svg') {
+      setShowMenu(true)
+    };
+  }
+
+  const handleOverlayClick = (e) => {
+    if (e.target.tagName === 'path' || e.target.tagName === 'svg') {
+      return
+    } else {
+      setShowMenu(false)
+    }
+  }
+
+  //hides scroll bar when slide menu is open
+  useEffect(() => {
+    showMenu ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "scroll"
+  }, [showMenu])
+
   return (
     <div className="App">
-      <section className='mainContainer'>
+      {showMenu && <SlideMenu setShowMenu={setShowMenu} />}
+      <section className='mainContainer' onClick={handleOverlayClick}>
+        <div className={`overlay ${ showMenu && 'showOverlay' }`}></div>
+        <Icon onClick={handleClick} className='hamburgerIcon' icon="ci:hamburger" />
         <div className="box box1">
           <Header />
           <img src={orangeMain} alt="orange" />
@@ -43,7 +72,7 @@ function App() {
         <Testimonials />
         <Footer />
       </section>
-    </div>
+    </div >
   );
 }
 
