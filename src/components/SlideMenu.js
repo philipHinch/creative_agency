@@ -16,6 +16,7 @@ const SlideMenu = ({ setShowMenu }) => {
                 <li className="slideMenuLink">Projects</li>
                 <li className="slideMenuLink">Contact</li>
             </ul>
+            <h3 className='slideMenuTitle'>sunnyside &#9728;</h3>
         </div>
     );
 }
